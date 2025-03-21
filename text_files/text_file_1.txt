@@ -1,11 +1,11 @@
-Verkaufsanalyse 2024 – Deutschland
+Sales Analysis 2024 – Germany - EXAMPLE TEXT
 
-In diesem Bericht analysieren wir die Verkaufszahlen verschiedener Filialen in Deutschland für das Jahr 2024. Die Daten umfassen den Umsatz (in €), die Anzahl der Verkäufe und den durchschnittlichen Bestellwert pro Filiale.
+This report analyzes the sales figures of various branches in Germany for the year 2024. The data includes revenue (in €), the number of sales, and the average order value per branch.
 
-Hier sind die Verkaufszahlen der wichtigsten Filialen:
+Here are the sales figures for the key branches:
 
 ------------------------------------------
-| Filiale    | Umsatz (€) | Verkäufe | Ø Bestellwert (€) |
+| Branch    | Revenue (€) | Sales | Ø Order Value (€) |
 ------------------------------------------
 | Berlin     | 125,340    | 1,567    | 79.94             |
 | Hamburg    | 98,210     | 1,320    | 74.41             |
@@ -14,7 +14,7 @@ Hier sind die Verkaufszahlen der wichtigsten Filialen:
 | Stuttgart  | 89,760     | 1,112    | 80.71             |
 ------------------------------------------
 
-**Quartalsumsätze:**
+**Quarterly Revenue:**
 - **Q1**: 450,000 € (5,600 Verkäufe)
 - **Q2**: 470,500 € (5,800 Verkäufe)
 - **Q3**: 490,200 € (6,100 Verkäufe)
