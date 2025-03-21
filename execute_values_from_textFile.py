@@ -1,42 +1,41 @@
-#Module importieren | re = Regex für Muster definition | os = Betriebssystemfunktionen
+# Import modules | re = Regex for pattern definition | os = Operating system functions
 import re
 import os
 
-# Nenne dein Suchbegriff
-suchbegriff = "Berlin"
+# Define your search term
+search_term = "Berlin"
 
-# Dateipfad, der die Textdateien enthält
-datei_pfad = "text_files/text_file_1.txt"
+# File path containing the text files
+file_path = "text_files/text_file_1.txt"
 
+# Check if the file exists
+if not os.path.exists(file_path):
+    print(f"Error: The file '{file_path}' does not exist!")
+    exit()  # Exit the program if the file is missing
 
-# Prüfe ob die Datei existiert
-if not os.path.exists(datei_pfad):
-    print(f"Fehler: Die Datei '{datei_pfad} existiert nicht!")
-    exit() # Programm beenden wenn die Datei fehlt
+# 1. Here, a regex pattern is created that will later be used  
+# to filter out data related to the Berlin branch from a line in the text file.
+# Regex pattern
+pattern = re.compile(r"\|\s*(.*?)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+)\s*\|")
 
-# 1. Hier wird ein Regex-Muster zusammengestellt, das später verwendet wird, 
-#um aus einer Zeile der Textdatei die Daten der Filiale Berlin herauszufiltern.
-#Regex-Muster
-muster = re.compile(r"\|\s*(.*?)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+)\s*\|")
+# Open the file and read its content
+with open(file_path, "r", encoding="utf-8") as file:
+    content = file.read()
 
-# Datei öffnen und Inhalt lesen
-with open(datei_pfad, "r", encoding="utf-8") as datei:
-    inhalt = datei.read()
+# Search for a specific pattern
+match = pattern.search(content)
 
-# Suche nach einem bestimmten Muster
-match = muster.search(inhalt)
-
-# Ergebnis ausgeben
-# Wenn ein Treffer gefunden wird, können wir die Daten extrahieren
+# Output the result
+# If a match is found, we can extract the data
 if match:
-    # Erstellen eines Dictionaries für die Gruppen
-    gruppen_namen = ['Suchbegriff', 'Umsatz', 'Verkäufe', 'Bestellwert']
-    gruppen_daten = match.groups()
+    # Create a dictionary for the groups
+    group_names = ['Search Term', 'Revenue', 'Sales', 'Order Value']
+    group_data = match.groups()
 
-    # Dynamisches Dictionary erstellen, bei dem die Namen den Gruppen zugeordnet werden
-    daten_dict = {gruppen_namen[i]: gruppen_daten[i] for i in range(len(gruppen_namen))}
+    # Create a dynamic dictionary where the names are assigned to the groups
+    data_dict = {group_names[i]: group_data[i] for i in range(len(group_names))}
 
-    # Ausgabe der extrahierten Daten mit den dynamischen Bezeichnern
-    print(f"{daten_dict['Suchbegriff']} : Umsatz = {daten_dict['Umsatz']}, Verkäufe = {daten_dict['Verkäufe']}, Bestellwert = {daten_dict['Bestellwert']}")
+    # Output the extracted data with dynamic labels
+    print(f"{data_dict['Search Term']} : Revenue = {data_dict['Revenue']}, Sales = {data_dict['Sales']}, Order Value = {data_dict['Order Value']}")
 else:
-    print("Kein Treffer gefunden.")
+    print("No match found.")
