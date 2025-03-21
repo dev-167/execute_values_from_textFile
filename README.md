@@ -42,11 +42,11 @@ If your file contains an additional column, e.g., "Discount," you can expand the
 
 pattern = re.compile(r"\|\s*(.*?)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|")
 
-## If your File uses ; instead of |:
+If your File uses ; instead of |:
 
 pattern = re.compile(r";\s*(.*?)\s*;\s*([\d,]+)\s*;\s*([\d,]+)\s*;\s*([\d.]+)\s*;")
 
-## If you only want to extract data for Berlin
+If you only want to extract data for Berlin
 
 pattern = re.compile(r"\|\s*Berlin\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+)\s*\|")
 
