@@ -15,7 +15,7 @@ This Python script helps extract data from a large text file. It searches for sp
     Run the script: Execute the Python script to extract the data.
 
 ### Example:
-´´´python
+
 search_term = "Berlin"  # Change this to the desired search term (e.g., a city name)
 
 ## Adjusting the Regex Pattern
