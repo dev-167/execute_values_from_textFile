@@ -1,6 +1,12 @@
-# Text File Data Extractor
+# Text File Data Extractor – Extract Structured Data from Large Text Files
 
 This Python script helps extract data from a large text file. It searches for specific patterns (e.g., city names) and outputs the corresponding values.
+
+## Introduction
+
+This Python script helps extract structured data from large text files using regular expressions (Regex). It is useful for data analysts, developers, or anyone working with large datasets in text format.
+The script searches for specific patterns (e.g., city names) and extracts corresponding numerical values such as revenue, sales, and order values.
+
 
 ## Features
 
@@ -14,7 +20,9 @@ This Python script helps extract data from a large text file. It searches for sp
     Provide the file: Ensure the text file is in the correct format and the file path is set correctly.
     Run the script: Execute the Python script to extract the data.
 
-### Example:
+### Modify the search term:
+
+Open the script and change the search_term variable:
 
 search_term = "Berlin"  # Change this to the desired search term (e.g., a city name)
 
@@ -35,6 +43,10 @@ pattern = re.compile(r"\|\s*(.*?)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+
 ([\d,]+) → First number (e. g. revenue)
 ([\d,]+) → Second number (e. g. Sales)
 ([\d.]+) → Thrid number (e. g. Order Value)
+
+### Run the script
+
+python execute_values_from_textFile.py
 
 ### Custom Adjustments
 
